@@ -15,6 +15,7 @@
       <div class="row m-5">
         <div class="col text-center">
           <h1 class="display-1">Panel de administrador</h1>
+          
         </div>
       </div>
   </div>

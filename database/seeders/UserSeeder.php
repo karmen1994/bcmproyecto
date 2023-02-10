@@ -19,7 +19,8 @@ class UserSeeder extends Seeder
         User::create([
             'npda'=>'8',
             'name'=>'Jorge Hernández Cabrera',
-            'password'=>'1234',
+            'email'=>'jorge@gmail.com',
+            'password'=>bcrypt('1234'),
             'remember_token' => Str::random(10)
         ]);
     }

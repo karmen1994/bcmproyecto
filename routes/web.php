@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
 
 Route::middleware([
     'auth:sanctum',
@@ -28,7 +28,7 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/index',[HomeController::class,'index'])->name('main');
+Route::get('/',[HomeController::class,'index'])->name('main');
 Route::get('aulas',[HomeController::class,'aulas'])->name('aulas');
 Route::get('aulas/{aula}',[HomeController::class,'equipos'])->name('aulas.equipos');
 Route::get('inventario',[HomeController::class,'inventario'])->name('inventario');
