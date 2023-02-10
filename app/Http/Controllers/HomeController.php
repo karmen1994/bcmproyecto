@@ -21,9 +21,7 @@ class HomeController extends Controller
     public function inventario(){
         return view('inventario.inventario');
     }
-    public function admin(){
-        return view('admin.index');
-    }
+    
     public function equipos(Aula $aula){
         $grupos=Grupo::where('aula_id',$aula->id)->get();
         $equipos=Equipo::where('aula_id',$aula->id)->get();

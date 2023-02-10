@@ -32,4 +32,3 @@ Route::get('/',[HomeController::class,'index'])->name('main');
 Route::get('aulas',[HomeController::class,'aulas'])->name('aulas');
 Route::get('aulas/{aula}',[HomeController::class,'equipos'])->name('aulas.equipos');
 Route::get('inventario',[HomeController::class,'inventario'])->name('inventario');
-Route::get('admin',[HomeController::class,'admin'])->name('admin');
