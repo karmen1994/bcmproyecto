@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Profesor\IncidenciaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,4 +31,6 @@ Route::middleware([
 Route::get('/',[HomeController::class,'index'])->name('main');
 Route::get('aulas',[HomeController::class,'aulas'])->name('aulas');
 Route::get('aulas/{aula}',[HomeController::class,'equipos'])->name('aulas.equipos');
+Route::resource('aula/{equipo}',IncidenciaController::class)->names('incidencias'); 
 Route::get('inventario',[HomeController::class,'inventario'])->name('inventario');
+

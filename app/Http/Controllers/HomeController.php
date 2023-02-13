@@ -27,4 +27,7 @@ class HomeController extends Controller
         $equipos=Equipo::where('aula_id',$aula->id)->get();
         return view('incidencias.equipos',compact('equipos','grupos'));
     }
+    /* public function incidencias(Equipo $equipo){
+        return view('incidencias.incidencias', compact('equipo'));
+    } */
 }
