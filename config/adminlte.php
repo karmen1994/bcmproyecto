@@ -318,53 +318,29 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
+        ['header' => 'ADMINISTRADOR'],
+        // [
+        //     'text' => 'Profesores',
+        //     'route' => "profesores",
+        //     'icon' => 'fas fa-fw fa-user',
+        // ],
         [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'Profesores',
+            'icon'    => 'fas fa-fw fa-user',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
+                    'text' => 'Listado',
+                    'route' => "profesores.index",
+                ], 
                 [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
+                    'text' => 'Agregar',
+                    'route' => "profesores.create",
+                ], 
             ],
         ],
         ['header' => 'labels'],
