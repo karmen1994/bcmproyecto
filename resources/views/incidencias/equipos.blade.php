@@ -15,7 +15,7 @@
       <div class="row m-5">
         <div class="col text-center">
           @foreach ($grupos as $grupo)
-                <span>{{$grupo->nombre}}</span>
+                <span class="display-1">{{$grupo->nombre}}</span>
           @endforeach
         </div>
       </div>
