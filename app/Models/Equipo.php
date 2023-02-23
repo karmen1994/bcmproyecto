@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Equipo extends Model
 {
     use HasFactory;
+    protected $fillable=['numero','averiado','aula_id'];
+    
     public function aula(){
         return $this->belongsTo(Aula::class);
     }

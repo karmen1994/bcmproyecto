@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Lista de profesores</h1>
 @stop
 
 @section('content')
@@ -24,16 +24,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($profesores as $profesor)
+                    @foreach ($users as $user)
+                    
                         <tr>
-                            <td colspan="2">{{$profesor->name}}</td>
-                            <td colspan="2">{{$profesor->email}}</td>
-                            <td>{{$profesor->npda}}</td>
+                            <td colspan="2">{{$user->name}}</td>
+                            <td colspan="2">{{$user->email}}</td>
+                            <td>{{$user->npda}}</td>
                             <td width="10px">
-                                <a href="{{route('profesores.edit', $profesor)}}" class="btn btn-primary btn-s">Editar</a>
+                                <a href="{{route('profesores.edit', $user)}}" class="btn btn-primary btn-s">Editar</a>
                             </td>
                             <td width="10px">
-                                <form action="{{route('profesores.destroy', $profesor)}}" method="POST">
+                                <form action="{{route('profesores.destroy', $user)}}" method="POST">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-danger btn-s">Borrar</button>

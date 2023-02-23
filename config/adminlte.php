@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Control</b> Incidencias',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -302,62 +302,57 @@ return [
         ],
 
         // Sidebar items:
-        [
+       /*  [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
-        ],
+        ], */
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
         ],
-        [
+       /*  [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],
+        ], */
         ['header' => 'ADMINISTRADOR'],
-        // [
-        //     'text' => 'Profesores',
-        //     'route' => "profesores",
-        //     'icon' => 'fas fa-fw fa-user',
-        // ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+             'text' => 'Profesores',
+            'route' => "profesores.index",
+             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text'    => 'Profesores',
-            'icon'    => 'fas fa-fw fa-user',
-            'submenu' => [
-                [
-                    'text' => 'Listado',
-                    'route' => "profesores.index",
-                ], 
-                [
-                    'text' => 'Agregar',
-                    'route' => "profesores.create",
-                ], 
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
+            'text' => 'Alumnos',
+           'route' => "alumnos.index",
+            'icon' => 'fas fa-fw  fa-child',
+       ],
+       [
+            'text' => 'Aulas',
+            'route' => "aulas.index",
+            'icon' => 'fas fa-fw  fa-university',
         ],
         [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
+            'text' => 'Grupos',
+           'route' => "grupos.index",
+            'icon' => 'fas fa-fw  fa-users',
+       ],
+       [
+            'text' => 'Perifericos',
+            'route' => "perifericos.index",
+            'icon' => 'fas fa-fw fa-tv ',
         ],
         [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text' => 'Equipos',
+            'route' => "equipos.index",
+            'icon' => 'fas fa-fw  fa-laptop',
+        ],
+        [
+            'text' => 'Incidencias',
+            'route' => "incidencias.index",
+            'icon' => 'fas fa-fw fa-flag',
         ],
     ],
 

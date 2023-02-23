@@ -10,8 +10,8 @@ class ProfesorController extends Controller
 {
     public function index()
     {
-        $profesores = User::all();
-        return view("admin.profesores.index", compact('profesores'));
+        $users = User::all();
+        return view("admin.profesores.index", compact('users'));
     }
 
     public function create()
@@ -21,7 +21,9 @@ class ProfesorController extends Controller
 
     public function store(Request $request)
     {
-        return $request->all();
+        //return $request->all();
+        User::create($request->all());
+        return redirect()->route("profesores.index");
     }
 
     public function show(User $profesor)
@@ -30,17 +32,18 @@ class ProfesorController extends Controller
     }
 
     public function edit(User $profesor)
-    {
+    {   return $profesor;
         return view("admin.profesores.edit", compact('profesor'));
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, User $profesor)
     {
-        //
+        return $request->all();
     }
 
-    public function destroy(User $profesor)
-    {
-        //
+    public function destroy(User $user)
+    {   return $user;
+        $user->delete();
+        return redirect()->route("profesores.index");
     }
 }
