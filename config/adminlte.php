@@ -323,36 +323,43 @@ return [
              'text' => 'Profesores',
             'route' => "profesores.index",
              'icon' => 'fas fa-fw fa-user',
+             'can'  => 'admin',
         ],
         [
             'text' => 'Alumnos',
            'route' => "alumnos.index",
             'icon' => 'fas fa-fw  fa-child',
+            'can'  => 'admin',
        ],
        [
             'text' => 'Aulas',
             'route' => "aulas.index",
             'icon' => 'fas fa-fw  fa-university',
+            'can'  => 'admin',
         ],
         [
             'text' => 'Grupos',
            'route' => "grupos.index",
             'icon' => 'fas fa-fw  fa-users',
+            'can'  => 'admin',
        ],
        [
             'text' => 'Periféricos',
             'route' => "perifericos.index",
             'icon' => 'fas fa-fw fa-tv ',
+            'can'  => 'admin',
         ],
         [
             'text' => 'Equipos',
             'route' => "equipos.index",
             'icon' => 'fas fa-fw  fa-laptop',
+            'can'  => 'admin',
         ],
         [
             'text' => 'Incidencias',
             'route' => "incidencias.index",
             'icon' => 'fas fa-fw fa-flag',
+            'can'  => 'admin',
         ],
     ],
 

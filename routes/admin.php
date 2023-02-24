@@ -7,10 +7,11 @@ use App\Http\Controllers\Admin\GrupoController;
 use App\Http\Controllers\Admin\IncidenciaController;
 use App\Http\Controllers\Admin\PerifericoController;
 use App\Http\Controllers\Admin\ProfesorController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('',[ProfesorController::class,'index'])->name('admin');
+Route::get('',[ProfesorController::class,'index'])->middleware('can:admin')->name('admin');
 
 Route::resource('profesores', ProfesorController::class)->names('profesores');
 Route::resource('alumnos',AlumnoController::class)->names('alumnos');
@@ -19,3 +20,4 @@ Route::resource('equipos',EquipoController::class)->names('equipos');
 Route::resource('perifericos',PerifericoController::class)->names('perifericos');
 Route::resource('grupos',GrupoController::class)->names('grupos');
 Route::resource('incidencias',IncidenciaController::class)->names('incidencias');
+

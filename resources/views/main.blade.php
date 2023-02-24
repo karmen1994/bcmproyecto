@@ -26,9 +26,11 @@
           </div>
       </div>
       <div class="row">
-        <div class="col text-center m-5">
-          <a class="btn btn-primary" href="{{route('admin')}}" style="width: 100%; padding:80px;">Panel de administrador</a>
-        </div>
+        @can('admin')
+            <div class="col text-center m-5">
+              <a class="btn btn-primary" href="{{route('admin')}}" style="width: 100%; padding:80px;">Panel de administrador</a>
+            </div>
+        @endcan
       </div>
   </div>
 
