@@ -340,7 +340,7 @@ return [
             'icon' => 'fas fa-fw  fa-users',
        ],
        [
-            'text' => 'Perifericos',
+            'text' => 'Periféricos',
             'route' => "perifericos.index",
             'icon' => 'fas fa-fw fa-tv ',
         ],

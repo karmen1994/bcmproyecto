@@ -22,7 +22,7 @@
       <div class="row">
           @foreach ($equipos as $equipo)
           <div class="col m-5">
-            <a href="{{route('incidencias.create',$equipo)}}" class="btn btn-primary p-5" style="width: 140%; height:110%;">{{$equipo->numero}}</a>
+            <a href="{{route('profesor.incidencias.create',$equipo)}}" class="btn btn-primary p-5" style="width: 140%; height:110%;">{{$equipo->numero}}</a>
         </div>
             
           @endforeach

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Aula;
 use App\Models\Equipo;
+use App\Models\Periferico;
 use Illuminate\Http\Request;
 
 class EquipoController extends Controller
@@ -28,8 +29,9 @@ class EquipoController extends Controller
      */
     public function create()
     {
+        $perifericos= Periferico::all();
         $aulas=Aula::all();
-        return view('admin.equipos.create',compact('aulas'));
+        return view('admin.equipos.create',compact('aulas','perifericos'));
     }
 
     /**
@@ -39,8 +41,9 @@ class EquipoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        Equipo::create($request->all());
+    {   
+       $equipo= Equipo::create($request->all());
+       $equipo->periferico()->attach($request->perifericos);
         return redirect()->route('equipos.index');
     }
 
@@ -63,8 +66,9 @@ class EquipoController extends Controller
      */
     public function edit(Equipo $equipo)
     {
+        $perifericos= Periferico::all();
         $aulas=Aula::all();
-        return view('admin.equipos.edit',compact('equipo','aulas'));
+        return view('admin.equipos.edit',compact('equipo','aulas','perifericos'));
     }
 
     /**
@@ -77,6 +81,7 @@ class EquipoController extends Controller
     public function update(Request $request, Equipo $equipo)
     {
         $equipo->update($request->all());
+        $equipo->periferico()->sync($request->perifericos);
         return redirect()->route('equipos.index');
     }
 

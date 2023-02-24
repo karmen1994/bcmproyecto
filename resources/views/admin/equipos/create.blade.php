@@ -24,6 +24,15 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="form-group">
+                    <p><b>Periféricos:</b></p>
+                    @foreach ($perifericos as $periferico)
+                        <p>
+                            {!! Form::checkbox('perifericos[]', $periferico->id, null) !!}
+                            {{$periferico->nombre}}
+                        </p>
+                    @endforeach
+                </div>
                 {!! Form::submit('Crear Equipo', ['class'=>'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>

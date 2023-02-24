@@ -15,6 +15,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Numero</th>
+                        <th>Periféricos</th>
                         <th>Aula</th>
                         <th colspan="2"></th>
                     </tr>
@@ -24,6 +25,11 @@
                         <tr>
                             <td>{{$equipo->id}}</td>
                             <td>{{$equipo->numero}}</td>
+                            <td>
+                                @foreach ($equipo->periferico as $periferico)
+                                    {{$periferico->nombre}}, 
+                                @endforeach
+                            </td>
                             <td>
                                 @foreach ($aulas as $aula)
                                     @if ($aula->id == $equipo->aula_id)
