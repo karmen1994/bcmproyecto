@@ -1,43 +1,41 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Panel Admin')
 
 @section('content_header')
+    <a class="btn btn-secondary float-right" href="{{route('profesores.create')}}">Nuevo Profesor</a>
     <h1>Lista de profesores</h1>
+    
 @stop
 
 @section('content')
     <div class="card">
-
-        <div class="card-header">
-            <a class="btn btn-secondary" href="{{route('profesores.create')}}">Añadir nuevo profesor</a>
-        </div>
-
         <div class="card-body">
-            <table class="table table-striped">
+            <table class="table ">
                 <thead>
                     <tr>
-                        <th colspan="2">Nombre</th>
-                        <th colspan="2">Correo</th>
-                        <th>NPDA</th>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Npda</th>
+                        <th>Email</th>
                         <th colspan="2"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
-                    
                         <tr>
-                            <td colspan="2">{{$user->name}}</td>
-                            <td colspan="2">{{$user->email}}</td>
+                            <td>{{$user->id}}</td>
+                            <td>{{$user->name}}</td>
                             <td>{{$user->npda}}</td>
+                            <td>{{$user->email}}</td>
                             <td width="10px">
-                                <a href="{{route('profesores.edit', $user)}}" class="btn btn-primary btn-s">Editar</a>
+                                <a class="btn btn-primary btn-sm" href="{{route('profesores.edit',$user)}}">Editar</a>
                             </td>
                             <td width="10px">
-                                <form action="{{route('profesores.destroy', $user)}}" method="POST">
+                                <form action="{{route('profesores.destroy',$user)}}" method="post">
                                     @csrf
                                     @method('delete')
-                                    <button type="submit" class="btn btn-danger btn-s">Borrar</button>
+                                    <button class="btn btn-danger btn-sm" type="submit">Borrar</button>
                                 </form>
                             </td>
                         </tr>

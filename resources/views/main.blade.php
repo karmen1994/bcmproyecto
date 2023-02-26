@@ -15,6 +15,7 @@
       <div class="row m-5">
         <div class="col text-center">
           <h1 class="display-1">IES JOSÉ MARÍA PÉREZ PULIDO</h1>
+          <a href="{{route('logout')}}">Cerrar Sesión</a>
         </div>
       </div>
       <div class="row">
