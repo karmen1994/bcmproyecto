@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Profesor\IncidenciaController;
 /*
@@ -34,3 +35,4 @@ Route::get('aulas/{aula}',[HomeController::class,'equipos'])->name('aulas.equipo
 Route::get('inventario',[HomeController::class,'inventario'])->name('inventario');
 Route::get('aula/{equipo}',[IncidenciaController::class,'create'])->name('profesor.incidencias.create');
 Route::post('aula',[IncidenciaController::class,'store'])->name('profesor.incidencias.store');
+Route::get('logout',[LoginController::class,'logout'])->name('logout');
