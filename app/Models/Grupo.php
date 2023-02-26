@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Grupo extends Model
 {
     use HasFactory;
+    protected $fillable = ['nombre','turno','aula_id'];
     //relacion uno a muchos
     public function aula(){
         return $this->belongsTo(Aula::class);

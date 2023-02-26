@@ -23,14 +23,14 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/', function () {
+        return view('index');
+    })->name('main');
 });
 
 Route::get('/',[HomeController::class,'index'])->name('main');
 Route::get('aulas',[HomeController::class,'aulas'])->name('aulas');
 Route::get('aulas/{aula}',[HomeController::class,'equipos'])->name('aulas.equipos');
 Route::get('inventario',[HomeController::class,'inventario'])->name('inventario');
-Route::get('aula/{equipo}',[IncidenciaController::class,'create'])->name('incidencias.create');
-Route::post('aula',[IncidenciaController::class,'store'])->name('incidencias.store');
+Route::get('aula/{equipo}',[IncidenciaController::class,'create'])->name('profesor.incidencias.create');
+Route::post('aula',[IncidenciaController::class,'store'])->name('profesor.incidencias.store');

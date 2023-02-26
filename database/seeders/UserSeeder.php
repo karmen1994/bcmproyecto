@@ -22,6 +22,14 @@ class UserSeeder extends Seeder
             'email'=>'jorge@gmail.com',
             'password'=>bcrypt('1234'),
             'remember_token' => Str::random(10)
-        ]);
+        ])->assignRole('Profesor');
+
+        User::create([
+            'npda'=>'0',
+            'name'=>'Administrador',
+            'email'=>'admin@admin.com',
+            'password'=>bcrypt('1234'),
+            'remember_token' => Str::random(10)
+        ])->assignRole('Admin');;
     }
 }

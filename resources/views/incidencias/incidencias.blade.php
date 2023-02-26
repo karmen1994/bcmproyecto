@@ -17,7 +17,7 @@
       </div>
       <div class="row">
         <div class="col">
-           {!! Form::open(['route'=>['incidencias.store',$equipo]]) !!}
+           {!! Form::open(['route'=>['profesor.incidencias.store',$equipo]]) !!}
                 <div class="form-group">
                     {!! Form::label('equipo_id', 'Equipo:',['class'=>'form-label fw-bold fs-5']) !!} 
                     <span class="ms-2">{{$equipo->numero}}</span>
