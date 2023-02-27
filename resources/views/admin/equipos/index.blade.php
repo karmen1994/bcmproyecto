@@ -17,6 +17,7 @@
                         <th>Numero</th>
                         <th>Periféricos</th>
                         <th>Aula</th>
+                        <th>Alumnos</th>
                         <th colspan="2"></th>
                     </tr>
                 </thead>
@@ -35,6 +36,14 @@
                                     @if ($aula->id == $equipo->aula_id)
                                         {{$aula->nombre}}
                                     @endif
+                                @endforeach
+                            </td>
+                            <td>
+                                @foreach ($equipo->alumno as $alumno)
+                                @if (isset($alumno))
+                                    <p>{{$alumno->nombre}}</p>
+                                @endif
+                                    
                                 @endforeach
                             </td>
                             <td width="10px">
