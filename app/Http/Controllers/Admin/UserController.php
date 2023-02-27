@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -25,8 +27,9 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.users.create');
+    {   
+        $roles=Role::all();
+        return view('admin.users.create',compact('roles'));
     }
 
     /**
@@ -37,7 +40,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        User::create($request->all());
+        $user =User::create($request->all());
+        $user ->fill(['password'=>Hash::make($request->password)])->save();
+        $user->roles()->sync($request->roles);
         return redirect()->route('profesores.index');
     }
 
@@ -60,7 +65,8 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin.users.edit',compact('user'));
+        $roles=Role::all();
+        return view('admin.users.edit',compact('user','roles'));
     }
 
     /**
@@ -73,6 +79,8 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user->update($request->all());
+        $user ->fill(['password'=>Hash::make($request->password)])->save();
+        $user->roles()->sync($request->roles);
         return redirect()->route('profesores.index');
     }
 

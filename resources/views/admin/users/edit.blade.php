@@ -26,6 +26,17 @@
                     {!! Form::label('password', 'Contraseña:', ['class'=>'form-label']) !!}
                     {!! Form::password('password', ['class'=>'form-control','placeholder'=>'Introduzca el contraseña.']) !!}
                 </div>
+                <div class="form-group">
+                    <p><b>Tipo:<b></p>
+                    @foreach ($roles as $role)
+                        <div>
+                            <label>
+                                {!! Form::checkbox('roles[]', $role->id, null, ['class'=>'mr-1']) !!}
+                                {{$role->name}}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
                 {!! Form::submit('Actualizar Profesor', ['class'=>'btn btn-primary']) !!}
             {!! Form::close() !!}
         </div>
