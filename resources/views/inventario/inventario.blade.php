@@ -15,6 +15,7 @@
       <div class="row">
         <div class="col text-center">
           <h1 class="display-1">Inventario</h1>
+          <a href="{{route('main')}}">Volver al Inicio</a>
         </div>
       </div>
       <div class="row mt-4">
