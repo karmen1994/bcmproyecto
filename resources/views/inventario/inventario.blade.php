@@ -28,7 +28,7 @@
                   <th>Nombre</th>
                   <th>Cantidad</th>
                   <th>Ubicación</th>
-                  <th></th>
+                 {{--  <th></th> --}}
                 </tr>
               </thead>
               <tbody>
@@ -38,7 +38,7 @@
                       <td>{{$periferico->nombre}}</td>
                       <td>{{$periferico->cantidad}}</td>
                       <td>{{$periferico->ubicacion}}</td>
-                      <td width="10px">
+                      {{-- <td width="10px">
                         {{-- <form action="{{route('inventario.update',$periferico)}}" method="post">
                             @csrf
                             @method('put')
@@ -47,13 +47,13 @@
                             <input type="hidden" name="cantidad" value="{{$periferico->cantidad-1}}">
                             <input type="submit" value="Usar" class="btn btn-primary btn-sm">
                         </form> --}}
-                        {!! Form::model($periferico, ['route'=>['inventario.update',$periferico],'method'=>'put']) !!}
+                     {{--    {!! Form::model($periferico, ['route'=>['inventario.update',$periferico],'method'=>'put']) !!}
                           {!! Form::hidden('nombre', null) !!}
                           {!! Form::hidden('ubicacion', null) !!}
                           {!! Form::hidden('cantidad', $periferico->cantidad-1) !!}
                           {!! Form::submit('Usar', ['class'=>'btn btn-primary btn-sm']) !!}
-                        {!! Form::close() !!}
-                    </td>
+                        {!! Form::close() !!} 
+                    </td> --}}
                     </tr>
                 @endforeach
               </tbody>
