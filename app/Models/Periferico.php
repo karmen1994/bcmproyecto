@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Periferico extends Model
 {
     use HasFactory;
-    protected $fillable =['nombre'];
+    protected $fillable =['nombre','cantidad','ubicacion'];
     public function equipo(){
         return $this->belongsToMany(Equipo::class);
     }

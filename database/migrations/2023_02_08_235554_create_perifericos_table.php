@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('perifericos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->unsignedBigInteger('cantidad');
+            $table->string('ubicacion');
             $table->timestamps();
         });
     }

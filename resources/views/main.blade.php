@@ -23,7 +23,7 @@
             <a class="btn btn-primary px-4 ms-5" href="{{route('aulas')}}" style="width: 100%; padding:80px;">Incidencias</a>
           </div>
           <div class="col text-center m-5">
-            <a class="btn btn-primary" href="{{route('inventario')}}" style="width: 100%; padding:80px;">Inventario</a>
+            <a class="btn btn-primary" href="{{route('inventario.index')}}" style="width: 100%; padding:80px;">Inventario</a>
           </div>
       </div>
       <div class="row">

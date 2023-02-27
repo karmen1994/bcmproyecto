@@ -16,22 +16,34 @@ class PerifericoSeeder extends Seeder
     public function run()
     {
         Periferico::create([
-            'nombre'=>'Pantalla 1'
+            'nombre'=>'Pantalla 1',
+            'cantidad'=>10,
+            'ubicacion'=>'Armario aula 59'
         ]);
         Periferico::create([
-            'nombre'=>'Pantalla 2'
+            'nombre'=>'Pantalla 2',
+            'cantidad'=>10,
+            'ubicacion'=>'Armario aula 58'
         ]);
         Periferico::create([
-            'nombre'=>'Teclado'
+            'nombre'=>'Teclado',
+            'cantidad'=>10,
+            'ubicacion'=>'Armario aula 59'
         ]);
         Periferico::create([
-            'nombre'=>'Raton'
+            'nombre'=>'Raton',
+            'cantidad'=>10,
+            'ubicacion'=>'Armario aula 59'
         ]);
         Periferico::create([
-            'nombre'=>'Auriculares'
+            'nombre'=>'Auriculares',
+            'cantidad'=>10,
+            'ubicacion'=>'Armario aula 59'
         ]);
         Periferico::create([
-            'nombre'=>'Silla'
+            'nombre'=>'Silla',
+            'cantidad'=>10,
+            'ubicacion'=>'Armario aula 59'
         ]);
     }
 }

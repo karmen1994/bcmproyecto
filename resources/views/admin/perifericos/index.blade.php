@@ -15,6 +15,8 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
+                        <th>Cantidad Disponible</th>
+                        <th>Ubicación</th>
                         <th colspan="2"></th>
                     </tr>
                 </thead>
@@ -23,6 +25,8 @@
                         <tr>
                             <td>{{$periferico->id}}</td>
                             <td>{{$periferico->nombre}}</td>
+                            <td>{{$periferico->cantidad}}</td>
+                            <td>{{$periferico->ubicacion}}</td>
                             <td width="10px">
                                 <a href="{{route('perifericos.edit',$periferico)}}" class="btn btn-primary btn-sm">Editar</a>
                             </td>
