@@ -4,6 +4,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Profesor\IncidenciaController;
+use App\Http\Controllers\Profesor\InventarioController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,7 +34,7 @@ Route::middleware([
 Route::get('/',[HomeController::class,'index'])->name('main');
 Route::get('aulas',[HomeController::class,'aulas'])->name('aulas');
 Route::get('aulas/{aula}',[HomeController::class,'equipos'])->name('aulas.equipos');
-Route::get('inventario',[HomeController::class,'inventario'])->name('inventario');
+Route::resource('inventario',InventarioController::class)->names('inventario');
 Route::get('aula/{equipo}',[IncidenciaController::class,'create'])->name('profesor.incidencias.create');
 Route::post('aula',[IncidenciaController::class,'store'])->name('profesor.incidencias.store');
 Route::get('logout',[LoginController::class,'logout'])->name('logout');

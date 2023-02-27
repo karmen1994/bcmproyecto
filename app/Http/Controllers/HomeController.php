@@ -6,6 +6,7 @@ use App\Models\Aula;
 use App\Models\Equipo;
 use App\Models\Grupo;
 use App\Models\Incidencia;
+use App\Models\Periferico;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,9 +18,6 @@ class HomeController extends Controller
         $aulas= Aula::all();
         $incidencias= Incidencia::where('estado','like','pendiente')->latest('id')->paginate(8);
         return view('incidencias.aulas', compact('aulas','incidencias'));
-    }
-    public function inventario(){
-        return view('inventario.inventario');
     }
     
     public function equipos(Aula $aula){
