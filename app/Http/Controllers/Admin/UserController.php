@@ -77,7 +77,10 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, User $user)
-    {
+    {   
+        $request->validate([
+            'password'=>'required'
+        ]);
         $user->update($request->all());
         $user ->fill(['password'=>Hash::make($request->password)])->save();
         $user->roles()->sync($request->roles);

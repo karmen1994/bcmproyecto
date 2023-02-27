@@ -25,6 +25,11 @@
                 <div class="form-group">
                     {!! Form::label('password', 'Contraseña:', ['class'=>'form-label']) !!}
                     {!! Form::password('password', ['class'=>'form-control','placeholder'=>'Introduzca el contraseña.']) !!}
+                    @error('password')
+                    <br>
+                    <small class="text-danger">La contraseña es obligatoria</small>
+                    <br>
+                 @enderror
                 </div>
                 <div class="form-group">
                     <p><b>Tipo:<b></p>
